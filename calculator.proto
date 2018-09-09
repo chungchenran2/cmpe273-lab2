@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "CalculatorProto";
+option objc_class_prefix = "CALC";
+
+service Calculator {
+	rpc add (OperandsRequest) returns (ResultReply) {}
+}
+
+message OperandsRequest {
+	int32 value1 = 1;
+	int32 value2 = 2;
+}
+
+message ResultReply {
+	string message = 1;
+}
